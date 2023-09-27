@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Form</title>
+  <!-- Add Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Add Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.1/css/all.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1>Contact Us</h1>
+    <form id="contactForm">
+      <!-- First Name -->
+      <div class="form-group">
+        <label for="firstName"><i class="fas fa-user"></i> First Name:</label>
+        <input type="text" class="form-control" id="firstName" placeholder="Enter your first name" required>
+        <div class="invalid-feedback">Please specify your first name.</div>
+      </div>
+
+      <!-- Last Name -->
+      <div class="form-group">
+        <label for="lastName"><i class="fas fa-user"></i> Last Name:</label>
+        <input type="text" class="form-control" id="lastName" placeholder="Enter your last name" required>
+        <div class="invalid-feedback">Please specify your last name.</div>
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email"><i class="fas fa-envelope"></i> Email:</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+        <div class="invalid-feedback">Please specify your email address.</div>
+      </div>
+
+      <!-- Phone Number -->
+      <div class="form-group">
+        <label for="phone"><i class="fas fa-phone"></i> Phone #:</label>
+        <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
+        <div class="invalid-feedback">Please specify your phone number.</div>
+      </div>
+
+      <!-- Address -->
+      <div class="form-group">
+        <label for="address"><i class="fas fa-map-marker"></i> Address:</label>
+        <input type="text" class="form-control" id="address" placeholder="Enter your street address" required>
+        <div class="invalid-feedback">Please specify your street address.</div>
+      </div>
+
+      <!-- City -->
+      <div class="form-group">
+        <label for="city"><i class="fas fa-map-marker"></i> City:</label>
+        <input type="text" class="form-control" id="city" placeholder="Enter your city" required>
+        <div class="invalid-feedback">Please specify your city.</div>
+      </div>
+
+      <!-- State -->
+      <div class="form-group">
+        <label for="state"><i class="fas fa-map-marker"></i> State:</label>
+        <input type="text" class="form-control" id="state" placeholder="Enter your state" required>
+      </div>
+
+      <!-- Hosting Status -->
+      <div class="form-group">
+        <label><i class="fas fa-server"></i> Do you have hosting?</label>
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="hostingYes" name="hostingStatus" value="yes" required>
+          <label class="custom-control-label" for="hostingYes">Yes</label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="hostingNo" name="hostingStatus" value="no" required>
+          <label class="custom-control-label" for="hostingNo">No</label>
+        </div>
+      </div>
+
+      <!-- Project Description -->
+      <div class="form-group">
+        <label for="projectDescription"><i class="fas fa-pencil-alt"></i> Project Description:</label>
+        <textarea class="form-control" id="projectDescription" rows="4" placeholder="Enter project description"></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Send</button>
+    </form>
+  </div>
+
+  <!-- Add Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      // Validate the form inputs here, and submit the data if valid
+      // For example, you can check if all fields are properly filled out
+      const firstName = document.getElementById('firstName').value;
+      const lastName = document.getElementById('lastName').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const address = document.getElementById('address').value;
+      const city = document.getElementById('city').value;
+
+      if (!firstName || !lastName || !email || !phone || !address || !city) {
+        alert('Please specify all required fields.');
+        return;
+      }
+
+      // If all fields are valid, you can submit the data to your server
+      alert('Form submitted successfully!');
+    });
+  </script>
+</body>
+</html>
